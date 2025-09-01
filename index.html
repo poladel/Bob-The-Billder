@@ -6,6 +6,32 @@
     <title>Bob the Billder</title>
 </head>
 <body>
-    
+    <h2>Bob the Billder</h2>
+    <div>
+        <form id="initial-form">
+            <table id="initial-table">
+                <tr>
+                    <td>
+                        <label>Total Bill</label>
+                        <input type="text" id="total-bill" placeholder="Enter total bill" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>kWh</label>
+                        <input type="text" id="kwh" placeholder="Enter kilowatt hours" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Submeters</label>
+                        <input type="number" id="submeter" value="1" min="1" max="10" required>
+                    </td>
+                </tr>
+            </table>
+            <button type="submit" id="next-button">Next</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
