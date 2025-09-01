@@ -48,15 +48,6 @@ function submeterRows() {
             `;
 		table.appendChild(row);
 	}
-
-    if (diffValues.length > 0) {
-        for (let i = 0; i < subCount; i++) {
-            const label = String.fromCharCode(65 + i);
-		
-            document.getElementById(`result-${label}`).value = diffValues[i] || 0;
-	    }
-        
-    }
 }
 
 function resultRows() {
@@ -83,6 +74,7 @@ function computeBill() {
 	const rateKWH = totalBill / kwh;
 
     const diffValues = [];
+    let diffSum = 0;
 
 	for (let i = 0; i < subCount; i++) {
 		const label = String.fromCharCode(65 + i);
@@ -91,10 +83,11 @@ function computeBill() {
         const curr = parseFloat(document.getElementById(`curr-${label}`).value) || 0;
 
         let diff = curr - prev;
-        diff = parseFloat(diff.toFixed(2));
+        diffSum += diff;
 
         diffValues.push(diff);
 	}
+    alert(diffSum);
 
     let sum = 0;
 	for (let i = 0; i < subCount; i++) {
@@ -115,7 +108,4 @@ function computeBill() {
 		
         document.getElementById(`result-${label}`).value = totalValues[i];
 	}
-
-    localStorage.setItem("diffValues", JSON.stringify(diffValues));
-    localStorage.setItem("totalValues", JSON.stringify(totalValues));
 }
