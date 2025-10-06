@@ -14,13 +14,13 @@
                 <tr>
                     <td>
                         <label>Total Bill</label>
-                        <input type="text" id="total-bill" placeholder="Enter total bill" onkeypress="restrictToNumbers(event)" required>
+                        <input type="number" id="total-bill" placeholder="Enter total bill" onkeypress="restrictToNumbers(event)" required>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <label>kWh</label>
-                        <input type="text" id="kwh" placeholder="Enter kilowatt hours" onkeypress="restrictToNumbers(event)" required>
+                        <input type="number" id="kwh" placeholder="Enter kilowatt hours" onkeypress="restrictToNumbers(event)" required>
                     </td>
                 </tr>
                 <tr>
@@ -30,6 +30,7 @@
                     </td>
                 </tr>
             </table>
+            <button type="button" id="clear-button">Clear</button>
             <button type="submit" id="next-button">Next</button>
         </form>
     </div>

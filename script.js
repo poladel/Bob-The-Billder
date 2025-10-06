@@ -6,6 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 event.preventDefault();
                 nextButton();
             });
+
+        document
+            .getElementById("clear-button")
+            .addEventListener("click", clearFields);
     }
 
     if (document.getElementById("bill-form")) {
@@ -33,6 +37,12 @@ function restrictToNumbers(event) {
     }
 }
 
+function clearFields() {
+    document.getElementById("total-bill").value = "";
+    document.getElementById("kwh").value = "";
+    document.getElementById("submeter").value = 1;
+}
+
 function nextButton() {
     let totalBill = document.getElementById("total-bill").value;
     let kilowatt = document.getElementById("kwh").value;
@@ -55,8 +65,8 @@ function submeterRows() {
         const row = document.createElement("tr");
         row.innerHTML = `
             <td>${label}</td>
-            <td><input type="text" id="prev-${label}" onkeypress="restrictToNumbers(event)" required></td>
-            <td><input type="text" id="curr-${label}" onkeypress="restrictToNumbers(event)" required></td>
+            <td><input type="number" id="prev-${label}" onkeypress="restrictToNumbers(event)" required></td>
+            <td><input type="number" id="curr-${label}" onkeypress="restrictToNumbers(event)" required></td>
             `;
         table.appendChild(row);
     }
@@ -122,6 +132,13 @@ function computeBill() {
         document.getElementById(`result-${label}`).value = totalValues[i];
     }
 
+    const summaryHeader = document.getElementById('summary-header');
+    if (summaryHeader) {
+        const date = new Date();
+        const month = date.toLocaleString('default', { month: 'long' });
+        const year = date.getFullYear();
+        summaryHeader.textContent = `${month} ${year} Bill Summary`;
+    }
     result.style.visibility = "visible";
 }
 
@@ -132,7 +149,7 @@ function editName() {
         const labelSpan = document.getElementById(`label-${label}`);
         const currentLabel = labelSpan.innerText;
 
-        labelSpan.outerHTML = `<input type="text" id="edit-label-${label}" value="${currentLabel}" maxlength="10">`;
+        labelSpan.outerHTML = `<input type="text" id="edit-label-${label}" value="${currentLabel}" maxlength="15">`;
     }
 
     const editButton = document.getElementById("edit-button");
@@ -178,7 +195,6 @@ function cancelEdit() {
         const row = editInput.parentNode;
         row.innerHTML = `
             <td><span id="label-${originalLabel}">${originalLabel}</span></td>
-            <td><input type="text" id="result-${originalLabel}" disabled></td>
             `;
     }
 
