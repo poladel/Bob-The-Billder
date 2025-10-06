@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bob the Billder</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h2>Bob the Billder</h2>
@@ -13,13 +14,13 @@
                 <tr>
                     <td>
                         <label>Total Bill</label>
-                        <input type="text" id="total-bill" placeholder="Enter total bill" required>
+                        <input type="text" id="total-bill" placeholder="Enter total bill" onkeypress="restrictToNumbers(event)" required>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <label>kWh</label>
-                        <input type="text" id="kwh" placeholder="Enter kilowatt hours" required>
+                        <input type="text" id="kwh" placeholder="Enter kilowatt hours" onkeypress="restrictToNumbers(event)" required>
                     </td>
                 </tr>
                 <tr>

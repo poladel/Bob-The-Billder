@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bob the Billder</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h2>Bob the Billder</h2>
@@ -16,19 +17,20 @@
                     <th>Current Reading</th>
                 </tr>
             </table>
-            <button type="button" onclick="history.back()">Back</button>
+            <button type="button" onclick="confirmBack()">Back</button>
             <button type="submit" id="compute-button">Submit</button>
         </form>
     </div>
-    <div id="div-result">
+    <br>
+    <div id="div-result" style="visibility: hidden;">
         <table id="summary-table">
             <tr>
                 <th></th>
                 <th>Bill Summary</th>
             </tr>
         </table>
+        <button type="button" id="edit-button">Edit</button>
     </div>
-    <div id="div-result">
         
 
     </div>

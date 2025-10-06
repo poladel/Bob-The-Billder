@@ -1,0 +1,75 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #1a1a1a;
+}
+
+h2 {
+    text-align: center;
+    color: #d87266;
+    margin-bottom: 20px;
+}
+
+
+div {
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#initial-table, #bill-table, #summary-table {
+    width: 100%;
+    border-collapse: separate;
+    margin-bottom: 20px;
+}
+
+#initial-table td, #bill-table th, #bill-table td, #summary-table th, #summary-table td {
+    padding: 8px;
+    /* border: 1px solid #1a1a1a; */
+    text-align: center;
+}
+
+label {
+    font-weight: 200;
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #d87266;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #b75f55;
+}
+
+@media (max-width: 480px) {
+    div {
+        width: 95%;
+        padding: 10px;
+    }
+
+    #initial-table td, #bill-table th, #bill-table td, #summary-table th, #summary-table td {
+        padding: 6px;
+    }
+}
