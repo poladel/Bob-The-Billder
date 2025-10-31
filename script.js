@@ -65,8 +65,8 @@ function submeterRows() {
         const row = document.createElement("tr");
         row.innerHTML = `
             <td>${label}</td>
-            <td><input type="number" id="prev-${label}" onkeypress="restrictToNumbers(event)" required></td>
-            <td><input type="number" id="curr-${label}" onkeypress="restrictToNumbers(event)" required></td>
+            <td><input type="number" id="prev-${label}" onkeypress="restrictToNumbers(event)" required step="any"></td>
+            <td><input type="number" id="curr-${label}" onkeypress="restrictToNumbers(event)" required step="any"></td>
             `;
         table.appendChild(row);
     }
