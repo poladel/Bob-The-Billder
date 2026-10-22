@@ -14,19 +14,28 @@
                 <tr>
                     <td>
                         <label>Total Bill</label>
-                        <input type="number" id="total-bill" placeholder="Enter total bill" onkeypress="restrictToNumbers(event)" required step="any">
+                        <input type="number" id="total-bill" placeholder="Enter current charges" onkeypress="restrictToNumbers(event)" required step="any" min="0.01">
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <label>kWh</label>
-                        <input type="number" id="kwh" placeholder="Enter kilowatt hours" onkeypress="restrictToNumbers(event)" required>
+                        <input type="number" id="kwh" placeholder="Enter kilowatt hours" onkeypress="restrictToNumbers(event)" required step="any" min="0.01">
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <label>Submeters</label>
                         <input type="number" id="submeter" value="1" min="1" max="10" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Unaccounted kWh</label>
+                        <select id="split">
+                            <option value="equal">Split equally (common areas)</option>
+                            <option value="proportional">Split by usage (losses)</option>
+                        </select>
                     </td>
                 </tr>
             </table>

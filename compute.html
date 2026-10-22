@@ -17,6 +17,7 @@
                     <th>Current Reading</th>
                 </tr>
             </table>
+            <p id="error-msg"></p>
             <button type="button" onclick="confirmBack()">Back</button>
             <button type="submit" id="compute-button">Submit</button>
         </form>
@@ -25,7 +26,13 @@
     <div id="div-result" style="visibility: hidden;">
         <h2 id="summary-header">Bill Summary</h2>
         <table id="summary-table">
+            <tr>
+                <th>Submeter</th>
+                <th>Billed kWh</th>
+                <th>Amount</th>
+            </tr>
         </table>
+        <p id="summary-details"></p>
         <button type="button" id="edit-button">Edit</button>
     </div>
         

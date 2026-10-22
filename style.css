@@ -45,7 +45,18 @@ label {
     font-weight: 200;
 }
 
-input[type="text"], input[type="number"] {
+#error-msg {
+    display: none;
+    color: #c0392b;
+    font-weight: bold;
+}
+
+#summary-details {
+    font-size: 0.9em;
+    color: #555;
+}
+
+input[type="text"], input[type="number"], select {
     width: 100%;
     padding: 8px;
     margin: 5px 0;
